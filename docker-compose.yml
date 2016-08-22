@@ -5,6 +5,5 @@ web:
   ports:
     - "8080:80"
   environment:
-    - NGINX_HOST=foobar.com
-    - NGINX_PORT=80
+    - REDIRECT_TO=http://foobar.com/
   command: /bin/bash -c "envsubst < /etc/nginx/conf.d/mysite.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
